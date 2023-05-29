@@ -13,7 +13,7 @@ public class Midle implements Observer{
 
 
     @Override
-    public void receiveOffer(String companyName, double salary) {
+    public void receiveOffer(String companyName, double salary, String vacancy) {
         if (this.salary < salary){
             System.out.printf("Мидл %s >>> Мне нужна эта работа! [%s - %f]\n", name, companyName, salary);
             this.salary = salary;

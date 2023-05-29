@@ -3,14 +3,17 @@ public class Student implements Observer {
 
     private  String name;
     private double salary;
+    private String vacancy;
 
     public Student(String name) {
         this.name = name;
-        salary = 5000;
+        salary = 35000;
+        this.vacancy = vacancy;
+        vacancy = "rabGalerny";
     }
 
     @Override
-    public void receiveOffer(String companyName, double salary) {
+    public void receiveOffer(String companyName, double salary, String vacancy) {
         if (this.salary < salary){
             System.out.printf("Студент %s >>> Мне нужна эта работа! [%s - %f]\n", name, companyName, salary);
             this.salary = salary;
