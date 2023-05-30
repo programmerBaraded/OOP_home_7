@@ -25,7 +25,7 @@ public class Company {
      */
     public void needEmployee(){
         for (Vacancy vacancy : vacancies) {
-            double salary = random.nextDouble(3000);
+            double salary = vacancy.getSalary() + random.nextDouble(3000);
             jobAgency.sendOffer(nameCompany, salary, vacancy.getVacancy());
         }
         
