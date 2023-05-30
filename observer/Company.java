@@ -7,14 +7,13 @@ public class Company {
 
     private Random random;
     private String nameCompany;
-    private double maxSalary;
+    // private double maxSalary;
     private List<Vacancy> vacancies = new ArrayList<>();
     private Publisher jobAgency;
 
 
-    public Company(String nameCompany, double maxSalary, Publisher jobAgency) {
+    public Company(String nameCompany, Publisher jobAgency) {
         this.nameCompany = nameCompany;
-        this.maxSalary = maxSalary;
         this.jobAgency = jobAgency;
         random = new Random();
     }
@@ -26,7 +25,7 @@ public class Company {
      */
     public void needEmployee(){
         for (Vacancy vacancy : vacancies) {
-            double salary = random.nextDouble(3000, maxSalary);
+            double salary = random.nextDouble(3000);
             jobAgency.sendOffer(nameCompany, salary, vacancy.getVacancy());
         }
         

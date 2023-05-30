@@ -9,9 +9,10 @@ public class Program {
      */
     public static void main(String[] args) {
         JobAgency jobAgency = new JobAgency();
-        Company geekBrains = new Company("GeekBrains", 70000, jobAgency);
-        Company google = new Company("Google", 100000, jobAgency);
-        Company yandex = new Company("Yandex", 120000, jobAgency);
+        Company geekBrains = new Company("GeekBrains", jobAgency);
+        Company google = new Company("Google", jobAgency);
+        Company yandex = new Company("Yandex", jobAgency);
+        Company epam = new Company(null, jobAgency);
 
         Master ivanov = new Master("Ivanov");
         Master sidorov = new Master("Sidorov");
