@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Company {
@@ -6,9 +8,9 @@ public class Company {
     private Random random;
     private String nameCompany;
     private double maxSalary;
-
+    private List<Vacancy> vacancies = new ArrayList<>();
     private Publisher jobAgency;
-    private String vacancy;
+
 
     public Company(String nameCompany, double maxSalary, Publisher jobAgency) {
         this.nameCompany = nameCompany;
@@ -23,8 +25,19 @@ public class Company {
      * Поиск сотрудника
      */
     public void needEmployee(){
-        double salary = random.nextDouble(3000, maxSalary);
-        jobAgency.sendOffer(nameCompany, salary, vacancy);
+        for (Vacancy vacancy : vacancies) {
+            double salary = random.nextDouble(3000, maxSalary);
+            jobAgency.sendOffer(nameCompany, salary, vacancy.getVacancy());
+        }
+        
+    }
+
+    public void addVacancy (Vacancy vacancy){
+        vacancies.add(vacancy);
+    }
+
+    public void removeVakancy(Vacancy vakancy) {
+        vacancies.remove(vakancy);
     }
 
 }

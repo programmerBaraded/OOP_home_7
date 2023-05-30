@@ -22,6 +22,7 @@ public class Program {
         jobAgency.registerObserver(petrov);
 
         for (int i = 0; i < 10; i++){
+            System.out.printf("Попытка найти сотрудника %d\n", i + 1);
             geekBrains.needEmployee();
             google.needEmployee();
             yandex.needEmployee();
